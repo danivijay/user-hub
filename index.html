@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Page Title</title>
+  <title>Indexer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://unpkg.com/vue"></script>
@@ -31,8 +31,8 @@
           <div class="card-body">
             <h4 class="card-title">{{ user.name }}</h4>
             <p class="card-text">{{ user.email }}</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+            <a v-if="!user.isLiked" class="card-link" @click.stop.prevent="switchLike(user.id,1)">Like</a>
+            <a v-else class="card-link" @click.stop.prevent="switchLike(user.id,0)">Unike</a>
           </div>
         </div>
   
